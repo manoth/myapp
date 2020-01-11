@@ -2,6 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MainService } from 'src/app/services/main.service';
 import { CryptoService } from 'src/app/services/crypto.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +11,7 @@ import { CryptoService } from 'src/app/services/crypto.service';
 })
 export class LoginComponent implements OnInit {
 
+  public jwtHelper = new JwtHelperService();
   public login = new Login();
 
   constructor(
@@ -19,6 +21,14 @@ export class LoginComponent implements OnInit {
     private crypto: CryptoService
   ) {
     document.body.className = 'hold-transition login-page';
+    const token = localStorage.getItem(this.tokenName);
+    try {
+      if (!this.jwtHelper.isTokenExpired(token)) {
+        this.router.navigate(['/index']);
+      }
+    } catch (err) {
+      this.main.logOut();
+    }
   }
 
   ngOnInit() {
