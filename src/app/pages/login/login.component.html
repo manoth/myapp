@@ -6,7 +6,7 @@
     <div class="login-box-body">
         <p class="login-box-msg">Sign in to start your session</p>
 
-        <form>
+        <form (submit)="onSubmit()">
             <div class="form-group has-feedback">
                 <input [(ngModel)]="login.username" name="username" type="text" class="form-control"
                     placeholder="Username">

@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConentComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    document.body.className = 'sidebar-mini skin-green';
+  }
 
   ngOnInit() {
   }

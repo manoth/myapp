@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,9 @@ export class LoginComponent implements OnInit {
 
   public login = new Login();
 
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
     document.body.className = 'hold-transition login-page';
   }
 
@@ -18,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     if (this.login.username == 'admin' && this.login.password == 'admin') {
-      alert('Login Success!');
+      this.router.navigate(['/index']);
     } else {
       alert('Login Fail !');
     }
