@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { FormsModule } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,7 +26,10 @@ import { LoginComponent } from './pages/login/login.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: 'TOKENNAME', useValue: environment.tokenname },
+    { provide: 'API', useValue: environment.api },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

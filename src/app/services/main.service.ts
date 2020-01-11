@@ -5,9 +5,6 @@ import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 
-// import 'bootstrap-notify';
-// declare const $: any;
-
 @Injectable({
   providedIn: 'root'
 })
