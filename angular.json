@@ -30,7 +30,16 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/admin-lte/bower_components/jquery/dist/jquery.min.js",
+              "node_modules/admin-lte/bower_components/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/admin-lte/bower_components/select2/dist/js/select2.min.js",
+              "node_modules/admin-lte/bower_components/jquery-slimscroll/jquery.slimscroll.min.js",
+              "node_modules/admin-lte/bower_components/fastclick/lib/fastclick.js",
+              "node_modules/admin-lte/dist/js/adminlte.min.js",
+              "node_modules/admin-lte/dist/js/demo.js",
+              "node_modules/sweetalert2/dist/sweetalert2.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -124,6 +133,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "myapp"
 }
