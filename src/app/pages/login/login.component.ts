@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.login.password = this.crypto.md5(this.login.password);
-    this.main.post('signin', this.login).then((res: any) => {
+    this.main.post('login', this.login).then((res: any) => {
       if (res.ok) {
         localStorage.setItem(this.tokenName, res.token);
         this.router.navigate(['/index']);
