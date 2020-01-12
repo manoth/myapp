@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { ConentComponent } from './contents/conent/conent.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import { PersanalComponent } from './contents/persanal/persanal.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,7 @@ const routes: Routes = [
     path: '', component: ConentComponent,
     canActivate: [AuthGuardService],
     children: [
-      { path: 'index', component: ConentComponent }
+      { path: 'index', component: PersanalComponent }
     ]
   },
   { path: '**', redirectTo: 'login', pathMatch: 'full' }

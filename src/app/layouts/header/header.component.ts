@@ -8,11 +8,15 @@ import { MainService } from 'src/app/services/main.service';
 })
 export class HeaderComponent implements OnInit {
 
+  public decode: any;
+
   constructor(
     private main: MainService
   ) { }
 
   ngOnInit() {
+    this.decode = this.main.decodeToken();
+    // console.log(this.decode);
   }
 
   logOut() {
